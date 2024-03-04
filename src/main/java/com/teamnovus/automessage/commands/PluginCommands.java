@@ -1,12 +1,12 @@
 package com.teamnovus.automessage.commands;
 
 import com.teamnovus.automessage.AutoMessage;
-import com.teamnovus.automessage.Permission;
 import com.teamnovus.automessage.commands.common.BaseCommand;
 import com.teamnovus.automessage.commands.common.CommandManager;
 import com.teamnovus.automessage.models.Message;
 import com.teamnovus.automessage.models.MessageList;
 import com.teamnovus.automessage.models.MessageLists;
+import com.teamnovus.automessage.Permission;
 import com.teamnovus.automessage.util.Utils;
 import java.util.List;
 import net.kyori.adventure.text.Component;

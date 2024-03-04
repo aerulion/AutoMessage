@@ -1,7 +1,7 @@
 package com.teamnovus.automessage.models;
 
-import com.teamnovus.automessage.AutoMessage;
 import com.teamnovus.automessage.tasks.BroadcastTask;
+import com.teamnovus.automessage.AutoMessage;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Map.Entry;
