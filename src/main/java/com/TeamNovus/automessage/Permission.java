@@ -1,9 +1,9 @@
-package com.TeamNovus.AutoMessage;
+package com.teamnovus.automessage;
 
 import org.bukkit.command.CommandSender;
+import org.jetbrains.annotations.NotNull;
 
 public enum Permission {
-  COMMAND_UPDATE("commands.update"),
   COMMAND_RELOAD("commands.reload"),
   COMMAND_ADD("commands.add"),
   COMMAND_EDIT("commands.edit"),
@@ -12,27 +12,23 @@ public enum Permission {
   COMMAND_INTERVAL("commands.interval"),
   COMMAND_EXPIRY("commands.expiry"),
   COMMAND_RANDOM("commands.random"),
-  COMMAND_PREFIX("commands.prefix"),
-  COMMAND_SUFFIX("commands.suffix"),
   COMMAND_BROADCAST("commands.broadcast"),
   COMMAND_LIST("commands.list"),
   NONE("");
 
-  private String node;
+  private final String node;
 
-  Permission(String node) {
+  Permission(final String node) {
     this.node = node;
   }
 
-  private static String getPermission(Permission permission) {
-    return "automessage." + permission.getNode();
+  private static @NotNull String getPermission(final @NotNull Permission permission) {
+    return "automessage." + permission.node;
   }
 
-  public static Boolean has(Permission permission, CommandSender target) {
+  public static boolean has(final @NotNull Permission permission,
+      final @NotNull CommandSender target) {
     return target.hasPermission(getPermission(permission));
   }
 
-  public String getNode() {
-    return node;
-  }
 }

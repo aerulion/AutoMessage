@@ -1,6 +1,6 @@
-package com.TeamNovus.AutoMessage.Commands.Common;
+package com.teamnovus.automessage.commands.common;
 
-import com.TeamNovus.AutoMessage.Permission;
+import com.teamnovus.automessage.Permission;
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
@@ -27,4 +27,5 @@ public @interface BaseCommand {
   int max() default -1;
 
   boolean hidden() default false;
+
 }
