@@ -2,8 +2,8 @@ package com.teamnovus.automessage.commands.common;
 
 import com.teamnovus.automessage.AutoMessage;
 import com.teamnovus.automessage.Permission;
+import com.teamnovus.automessage.util.Utils;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 import net.kyori.adventure.text.Component;
@@ -47,7 +47,7 @@ public class BaseCommandExecutor implements CommandExecutor, TabCompleter {
     }
 
     final @Nullable BaseCommand baseCommand = CommandManager.getCommand(strings[0]);
-    final Object @NotNull [] commandArgs = Arrays.stream(strings).skip(1).toArray();
+    final Object @NotNull [] commandArgs = Utils.skipFirstElement(strings);
 
     if (commandSender instanceof Player && !(baseCommand.player())) {
       commandSender.sendMessage(

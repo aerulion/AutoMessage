@@ -5,6 +5,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.minimessage.MiniMessage;
+import org.jetbrains.annotations.Contract;
 import org.jetbrains.annotations.NotNull;
 
 public final class Utils {
@@ -41,6 +42,21 @@ public final class Utils {
         .replace("&e", "<reset><yellow>").replace("&f", "<reset><white>")
         .replace("&k", "<obfuscated>").replace("&l", "<bold>").replace("&m", "<strikethrough>")
         .replace("&n", "<underlined>").replace("&o", "<italic>").replace("&r", "<reset>");
+  }
+
+  /**
+   * Skips the first element of the given array and returns a new array with the remaining
+   * elements.
+   *
+   * @param originalArray the original array from which the first element should be skipped.
+   * @return a new array with the remaining elements after skipping the first element.
+   */
+  @Contract(pure = true)
+  public static String @NotNull [] skipFirstElement(final String @NotNull [] originalArray) {
+    if (originalArray.length <= 1) {
+      return new String[0];
+    }
+    return Arrays.copyOfRange(originalArray, 1, originalArray.length);
   }
 
   public static boolean isInteger(final @NotNull String s) {

@@ -53,7 +53,7 @@ public final class CommandManager {
 
   public static void execute(final BaseCommand command, final Object... args) {
     try {
-      COMMANDS.get(command).invoke(COMMANDS.get(command).getDeclaringClass().getDeclaredConstructor().newInstance(), args);
+      COMMANDS.get(command).invoke(COMMANDS.get(command).getDeclaringClass().newInstance(), args);
     } catch (final Exception e) {
       e.printStackTrace();
     }
