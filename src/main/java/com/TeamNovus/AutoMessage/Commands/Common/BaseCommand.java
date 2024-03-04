@@ -1,30 +1,30 @@
 package com.TeamNovus.AutoMessage.Commands.Common;
 
+import com.TeamNovus.AutoMessage.Permission;
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
-import com.TeamNovus.AutoMessage.Permission;
-
 @Target(ElementType.METHOD)
 @Retention(RetentionPolicy.RUNTIME)
 public @interface BaseCommand {
-	String[] aliases();
 
-	Permission permission();
+  String[] aliases();
 
-	String usage() default "";
+  Permission permission();
 
-	String desc();
+  String usage() default "";
 
-	boolean player() default true;
+  String desc();
 
-	boolean console() default true;
+  boolean player() default true;
 
-	int min() default 0;
+  boolean console() default true;
 
-	int max() default -1;
+  int min() default 0;
 
-	boolean hidden() default false;
+  int max() default -1;
+
+  boolean hidden() default false;
 }
