@@ -5,6 +5,6 @@ author: ELCHILEN0
 description: Schedule easily configurable broadcasts!
 main: com.teamnovus.automessage.AutoMessage
 commands:
-   automessage:
-     description: Main command for all AutoMessage commands
-     aliases: [am]
+  automessage:
+    description: Main command for all AutoMessage commands
+    aliases: [ am ]

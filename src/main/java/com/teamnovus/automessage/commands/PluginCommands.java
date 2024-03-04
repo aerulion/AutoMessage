@@ -45,11 +45,13 @@ public class PluginCommands {
 
       if (list != null) {
         if (commandArgs.length >= 3 && Utils.isInteger(commandArgs[1])) {
-          final @NotNull Message message = new Message(Utils.concat(commandArgs, 2, commandArgs.length));
+          final @NotNull Message message = new Message(
+              Utils.concat(commandArgs, 2, commandArgs.length));
 
           list.addMessage(Integer.valueOf(commandArgs[1]), message);
         } else {
-          final @NotNull Message message = new Message(Utils.concat(commandArgs, 1, commandArgs.length));
+          final @NotNull Message message = new Message(
+              Utils.concat(commandArgs, 1, commandArgs.length));
 
           list.addMessage(message);
         }
@@ -69,7 +71,8 @@ public class PluginCommands {
 
     if (list != null) {
       if (Utils.isInteger(commandArgs[1])) {
-        final @NotNull Message message = new Message(Utils.concat(commandArgs, 2, commandArgs.length));
+        final @NotNull Message message = new Message(
+            Utils.concat(commandArgs, 2, commandArgs.length));
 
         if (list.editMessage(Integer.valueOf(commandArgs[1]), message)) {
           AutoMessage.plugin.saveConfiguration();
@@ -182,7 +185,8 @@ public class PluginCommands {
       try {
         if (Utils.isInteger(commandArgs[1])) {
           if (Integer.valueOf(commandArgs[1]).longValue() >= 0) {
-            list.setExpiry(System.currentTimeMillis() + Integer.valueOf(commandArgs[1]).longValue());
+            list.setExpiry(
+                System.currentTimeMillis() + Integer.valueOf(commandArgs[1]).longValue());
           } else {
             list.setExpiry(-1L);
           }
@@ -272,7 +276,7 @@ public class PluginCommands {
       if (list != null) {
         commandSender.sendMessage(
             Component.text("List '" + MessageLists.getBestKey(commandArgs[0]) + "'",
-            CommandManager.LIGHT));
+                CommandManager.LIGHT));
 
         final List<Message> messages = list.getMessages();
         for (int i = 0; i < messages.size(); i++) {

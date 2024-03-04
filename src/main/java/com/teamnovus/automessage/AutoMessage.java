@@ -1,12 +1,12 @@
 package com.teamnovus.automessage;
 
 import com.teamnovus.automessage.commands.DefaultCommands;
-import com.teamnovus.automessage.models.Message;
-import com.teamnovus.automessage.models.MessageList;
-import com.teamnovus.automessage.models.MessageLists;
 import com.teamnovus.automessage.commands.PluginCommands;
 import com.teamnovus.automessage.commands.common.BaseCommandExecutor;
 import com.teamnovus.automessage.commands.common.CommandManager;
+import com.teamnovus.automessage.models.Message;
+import com.teamnovus.automessage.models.MessageList;
+import com.teamnovus.automessage.models.MessageLists;
 import java.io.File;
 import java.util.LinkedList;
 import java.util.List;
